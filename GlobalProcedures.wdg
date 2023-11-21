@@ -1,0 +1,202 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : GlobalProcedures
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x1717a4de00f803ea
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAACOBX99tOSFmn72r4DystMS44R8g9le4okE5S2AmMtSqRe6teTcI8tEXFNuPz3O5t9mo4nzjJ2BUEG65nKHr/BHLTeBF+KnlKX9e/cW/mrRcg==
+  type_code : 31
+  p_codes : []
+  procedures :
+   -
+     name : DrawPie
+     internal_properties : CAAAAAgAAAAtAMWmgkBuW68sN30SZy+qhryRQ9rbdJd/vwExgymgVJBtgK1CdoASRw10PNBKsI31vwRMu1rIihYeTbVWD9g6joO34XL4poBkZLtjlOfQqh2uizkikDSL/O4kNj8s7uc6MLCiwRJhrb46qzkYlUyxVU6sRqF2Q+6I2B7iJpWymOQHf03D4axzpZkuY6CIy5AiU5Uwdv8cO0+SHjB0/tdR2Bw=
+     procedure_id : 1663979860742702058
+     type_code : 15
+     code : |1+
+      // Syntax:
+      //DrawPie (<nCapital>, <nInterests>, <ChartName> is control)
+      //
+      // Parameters:
+      //	nCapital: Amount of the capital
+      //	nInterests: Amount of cumulated interests
+      //	ChartName (control): Name of the chart control
+      // Return value:
+      // 	None
+      
+      PROCEDURE DrawPie(nCapital, nInterests, ChartName is Control)
+      
+      // Delete the previous content
+      grDeleteSeries(ChartName)
+      
+      grSeriesColor(ChartName, 1, RGB(228, 182, 45))
+      grSeriesColor(ChartName, 2, RGB(205, 95, 74))
+      
+      // Display the values
+      grLabel(ChartName, grShowPercent, True)
+      
+      // Display the tooltips
+      grTooltip(ChartName, grTooltipFormatPie, "[%CATEGORY%]"+CR+"[%VALUE%]"+CR+"[%%%]")
+      
+      // Display mask
+      grMask(ChartName,grMaskValue, "999 999 999 €")
+      grMask(ChartName,grMaskPercent, "999,9 %")
+      
+      // Start angle of the first section
+      grPieStartAngle(ChartName, 0)
+      
+      // Subscript of the section to off center
+      grPiePullOut(ChartName, 1, 20)
+      
+      // Example of data
+      grCategoryLabel(ChartName, 1, <§@3c10ebd4078a706e0000§>)
+      grAddData(ChartName, 1, nInterests)
+      grCategoryLabel(ChartName, 2, <§@3c10ebd4078a706e0001§>)
+      grAddData(ChartName, 1, nCapital)
+      
+      // Draw the chart
+      grDraw(ChartName)
+     type : 458752
+   -
+     name : DrawLines
+     internal_properties : CAAAAAgAAAAQ6Ao3dKZcVgoF/rT0UMtL3SobAReC25Buf9eP889zechLop6u47g1KNgaO3hZb0TPf9A+fwPk2qMzQOTvqWbha5dzVOCmh8gSyjOFB9kOcV/6uo26ZEFUQJ+PJlcQ7FWvRmUej2i8xAQR0qHSx/IHohzjridcSh0+7R18vNPrIJZFwKMX82sGpQgii6f1jphJABzp
+     procedure_id : 1663979860742767594
+     type_code : 15
+     code : |1+
+      // Syntax:
+      //DrawLines (<ChartName> is control)
+      //
+      // Parameters:
+      //	ChartName (control): Name of the chart control
+      // Return value:
+      // 	None
+      
+      PROCEDURE DrawLines(ChartName is Control)
+      
+      // Delete the previous content
+      grDeleteSeries(ChartName)
+      
+      // Display the tooltips
+      grTooltip(ChartName, grTooltipFormat, "[%SERIES%]"+CR+"[%CATEGORY%]"+CR+"[%VALUE%]")
+      
+      // Display mask
+      grMask(ChartName,grMaskValue, "999 999 999 €")
+      
+      // Series #1
+      // Color of the series
+      grSeriesColor(ChartName, 1, RGB(228, 182, 45))
+      
+      // Legend for the series
+      grSeriesLabel(ChartName, 1, <§@3c10ebd4078a706e0002§>)
+      
+      // Add the "interest" data
+      FOR i=1 _TO_ TableCount(FinancialWin.TABLE_LOAN_PAYMENT_SCHEDULE)
+      	grCategoryLabel(ChartName, i, DateToString(FinancialWin.TABLE_LOAN_PAYMENT_SCHEDULE.COL_PAYMENT_DATE[i],<§@3c10ebd4078a706e0003§>))
+      	grAddData(ChartName, 1, FinancialWin.TABLE_LOAN_PAYMENT_SCHEDULE.COL_INTEREST[i])
+      END
+      
+      // Series #2
+      // Color of the series
+      grSeriesColor(ChartName, 2, RGB(205, 95, 74))
+      
+      // Legend for the series
+      grSeriesLabel(ChartName, 2, <§@3c10ebd4078a706e0001§>)
+      
+      // Add the "capital" data
+      FOR i=1 _TO_ TableCount(FinancialWin.TABLE_LOAN_PAYMENT_SCHEDULE)
+      	grAddData(ChartName, 2, FinancialWin.TABLE_LOAN_PAYMENT_SCHEDULE.COL_CAPITAL[i])
+      END
+      
+      // Draw the chart
+      grDraw(ChartName)
+      
+     type : 458752
+   -
+     name : DrawInvestmentLines
+     internal_properties : CAAAAAgAAAAQ6Ao3dKZcVgoF/rT0UMtL3SobAReC25Buf9eP889zechLop6u47g1KNgaO3hZb0TPf9A+fwPk2qMzQOTvqWbha5dzVOCmh8gSyjOFB9kOcV/6uo26ZEFUQJ+PJlcQ7FWvRmUej2i8xAQR0qHSx/IHohzjridcSh0+7R18vNPrIJZFwKMX82sGpQgii6f1jphJABzp
+     procedure_id : 1663979860742833130
+     type_code : 15
+     code : |1+
+      // Syntax:
+      //DrawInvestmentLines (<ChartName> is control)
+      //
+      // Parameters:
+      //	ChartName (control): Name of the chart control
+      // Return value:
+      // 	None
+      
+      PROCEDURE DrawInvestmentLines(ChartName is Control)
+      
+      // Delete the previous content
+      grDeleteSeries(ChartName)
+      
+      // Display the tooltips
+      grTooltip(ChartName, grTooltipFormat, "[%SERIES%]"+CR+"[%CATEGORY%]"+CR+"[%VALUE%]")
+      
+      // Display mask
+      grMask(ChartName,grMaskValue, "999 999 999 €")
+      
+      // Series #1
+      // Color of the series
+      grSeriesColor(ChartName, 1, RGB(228, 182, 45))
+      
+      // Legend for the series
+      grSeriesLabel(ChartName, 1, <§@3c10ebd4078a706e0002§>)
+      
+      // Add the "interest" data
+      FOR i=1 _TO_ TableCount(FinancialWin.TABLE_INVESTMENT)
+      	grCategoryLabel(ChartName, i, DateToString(FinancialWin.TABLE_INVESTMENT.COL_PAYMENTDATE[i],"MMM YYYY"))
+      	grAddData(ChartName, 1, FinancialWin.TABLE_INVESTMENT.COL_CUMULATED_INTERESTS[i])
+      END
+      
+      // Series #2
+      // Color of the series
+      grSeriesColor(ChartName, 2, RGB(205, 95, 74))
+      
+      // Legend for the series
+      grSeriesLabel(ChartName, 2, <§@3c10ebd4078a706e0001§>)
+      
+      // Add the "capital" data
+      FOR i=1 _TO_ TableCount(FinancialWin.TABLE_INVESTMENT)
+      	grAddData(ChartName, 2, FinancialWin.TABLE_INVESTMENT.COL_CAPITAL[i])
+      END
+      
+      // Draw the chart
+      grDraw(ChartName)
+      
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : ProceduresGlobales
+resources :
+ string_res :
+  identifier : 0x3c10ebd4078a706e
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      en-GB : Interest
+     index : 0
+   -
+     text :
+      en-GB : Capital
+     index : 1
+   -
+     text :
+      en-GB : Interests
+     index : 2
+   -
+     text :
+      en-GB : MMM YYYY
+     index : 3
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

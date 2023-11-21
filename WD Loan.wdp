@@ -1,0 +1,120 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WD Loan
+ major_version : 28
+ minor_version : 0
+ type : 4097
+ description : "'WD Loan' Project"
+ subtype : 0
+project :
+ identifier : 0x0
+ internal_properties : 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
+ configurations :
+  -
+    name : WD Loan
+    internal_properties : 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
+    configuration_id : 2341208594954407715
+    type : 1
+    generation_name : WD Loan.exe
+    version :
+     version : VI200041K
+     autoincrement_version : false
+    icon_filename : .\MONEY5.ico
+    language : 2
+ elements :
+  identifier : 0x4acc52ba0014a785
+  elements :
+   -
+     name : ScheduleStatus
+     identifier : 0x420351db0001fa7f
+     internal_properties : CAAAAAgAAACV8f0hnvuz7PHNvSAuDCHXicZsXGEuLsaqMB5qNf2RR/kL/Ok7xZpKwn54QMAwyDiAgA==
+     physical_name : .\ScheduleStatus.wde
+     type : 3
+   -
+     name : InvestmentStatus
+     identifier : 0x420390de00021cee
+     internal_properties : CAAAAAgAAAC5mxfzzPnKjQIFa4/RrsnuqvAMYKw5h31Ykvo6Za/KIYCazBF2GZT8UumHMBP3QKu8
+     physical_name : .\InvestmentStatus.wde
+     type : 3
+   -
+     name : GlobalProcedures
+     identifier : 0x3e53c16261579064
+     internal_properties : CAAAAAgAAACb90NHZCGJkquzl75ULHuVnzhqSpWlx32hWrI5V/WhT+0DQBUNKwQ0+CSeGppWIpZ+hg==
+     physical_name : .\GlobalProcedures.wdg
+     type : 7
+   -
+     name : TEST_FinancialWin
+     identifier : 0x4a092fc30000a064
+     internal_properties : CAAAAAgAAACZ9UFFYt9XWH1JafwK6z3rPUgEpKPu2whOL1yTatC6boKeDdhP6cZ2Pvrk3KRcJJR8hA==
+     physical_name : .\TEST_FinancialWin.wxt
+     type : 17
+   -
+     name : WinExtractCode
+     identifier : 0x42a555120000fd9a
+     internal_properties : CAAAAAgAAACY9kBcaxAYw5qikoVDNRSqjMNbQ36FAfRWvSgj7AaWQvoUVQAWIv0v51NNq2tlHZN9hQ==
+     physical_name : .\WinExtractCode.wdw
+     type : 2
+   -
+     name : FinancialWin
+     identifier : 0x420395ac0003e141
+     internal_properties : CAAAAAgAAABGzK7yMW5GaUyYfGOZnEbAKmshuZYrVFdORwWQEeGrra+38lPAeFeJDQnzzVWLd2lT0w==
+     physical_name : .\FinancialWin.wdw
+     type : 2
+  other_elements :
+   -
+     physical_name : .\Description.rtf
+   -
+     physical_name : .\Description.gif
+  net_assemblies : []
+  uwp_api : []
+  external_components : []
+  internal_components : []
+ report_and_queries_enabled : false
+ common_generation_directory : true
+ languages :
+  - en-GB
+ code_elements :
+  internal_properties : CAAAAAgAAABseimUYz4VdXZ8hGsGFqoxLDfDcHkNZdBf0iQg2FQcqmw5VrO2lryVMt3efm9RagPlXJBReauIsX3ZdB8=
+  type_code : 0
+  p_codes :
+   -
+     code : |1-
+      
+     type : 196608
+   -
+     code : |1-
+      
+     type : 196610
+   -
+     code : |1-
+      
+     type : 196619
+   -
+     type : 196621
+   -
+     type : 196627
+     enabled : false
+  orphans :
+   -
+     name : WD Loan
+     identifier : 0x4acc52ba001ba831
+     code_elements :
+      type_code : 159
+      p_codes : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+rad :
+ internal_properties : CAAAAAgAAABhIL0UXeZmxDJxY3Xy0Q==
+project_explorer :
+ explorer_type : project
+ children :
+  -
+    name : Windows Store Apps API
+    explorer_type : custom_folder
+resources :
+ string_res :
+  identifier : 0x0
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAAAd98VSJfHHqE3P0QHwrwdhn7ig8dWBR6valpUTgnAMTVXiDg==
